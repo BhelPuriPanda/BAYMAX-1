@@ -1,65 +1,69 @@
-Baymax — Appointment Booking System 🏥
-📚 Project Overview
-Baymax is a full-stack application designed to enable voice-assisted booking of appointments at a hospital or clinic.
-It allows receptionists to:
+🏥 Baymax – Smart Appointment Booking System
+Baymax is an intelligent, full-stack clinic management web application that simplifies appointment booking using AI, voice commands, and Google integrations. Designed for front desk use, it ensures a seamless experience for booking and managing patient appointments.
 
-✅ Book appointments by voice or by typing details.
-✅ Store appointments in a MongoDB Atlas database.
-✅ View a confirmation after booking.
-✅ Implement authentication with JSON Web Token (JWT).
+📌 Key Features
+🎙️ AI-Powered Voice Appointment Booking
+Book appointments using speech with automatic transcription and intelligent slot mapping.
 
-🔹Features🔹
-🔑 User Authentication (with JWT)
+📅 Google Calendar Integration
+Automatically syncs booked appointments with the doctor's Google Calendar.
 
-🏥 Create Appointments (with patient name, symptoms, preferred doctor)
+📧 Gmail Notifications
+Sends confirmation emails to patients and doctors via Gmail API.
 
-🦻 Voice Input for faster booking (using Web Speech API)
+💡 User-Friendly Interface
+Built with React and Tailwind CSS for a clean, responsive UI.
 
-📅 Stores Appointment Date and Time
-
-🌟 User-friendly UI with React + Tailwind CSS
-
-🔹Tech Stack🔹
-
-Frontend:
+🛠️ Tech Stack
+🔹 Frontend
 React
+
 Axios
-Speech Recognition API
+
+Web Speech API (Speech Recognition)
+
 Tailwind CSS
 
-Backend:
+🔹 Backend
 Node.js
+
 Express
+
 Mongoose
-JWT
-bcrypt
 
-Database:
-MongoDB Atlas (cloud)
+JWT (Authentication)
 
-🔹API Endpoints🔹
+bcrypt (Password hashing)
+
+🔹 Database
+MongoDB Atlas (Cloud)
+
+🔗 API Endpoints
 Method	URL	Description
-POST	/api/auth/login	Login and generate a JWT
+POST	/api/auth/login	Login and generate JWT
 POST	/api/appointment/create	Create a new appointment
 GET	/api/appointment/list	Retrieve all appointments
 
-🔹Installation🔹
+⚙️ Installation
 bash
 Copy
 Edit
-git clone https://github.com/BhelPuriPanda/baymax.git
+git clone https://github.com/suvxn/baymax.git
 cd baymax
-🔹Environment Variables🔹
-Create a .env in your server directory with:
+🔧 Environment Variables
+Create a .env file in the server/ directory with the following keys:
 
-bash
+env
 Copy
 Edit
 PORT=5000
-MONGODB_URI=<your-mongodb-atlas-connection-string>
-JWT_SECRET=<your-jwt-secret>
-🔹Running the Application🔹
-Start backend server:
+MONGODB_URI=your_mongodb_atlas_connection_string
+JWT_SECRET=your_jwt_secret
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+GOOGLE_REFRESH_TOKEN=your_refresh_token
+▶️ Running the Application
+Start the backend server:
 
 bash
 Copy
@@ -67,24 +71,41 @@ Edit
 cd server
 npm install
 npm start
-Start frontend application:
+Start the frontend:
 
 bash
 Copy
 Edit
 cd frontend
 npm install
-npm start
-🔹Developer Notes🔹
-The application is currently set up to run:
+npm run dev
+Client: http://localhost:5173
+Server: http://localhost:5000
 
-Client at http://localhost:5173.
+📤 Gmail & Calendar Integration
+Requires Google OAuth setup. The app uses Gmail API and Google Calendar API for:
 
-Server at http://localhost:5000.
+Sending email confirmations to patients and doctors.
 
-🔹Contributing🔹
-Contributions are welcome!
-Please feel free to create a pull request or submit issues.
+Automatically adding appointments to Google Calendar.
 
-🔹License🔹
-This project is licensed under MIT license.
+🤖 AI Voice Booking
+Uses the Web Speech API for speech recognition.
+
+Recognizes keywords like "book appointment for tomorrow at 3 PM with Dr. Smith".
+
+AI parses and validates input before creating the booking.
+
+👥 Contributing
+We welcome contributions!
+
+Fork the repository
+
+Create a feature branch
+
+Submit a pull request
+
+Issues and feature suggestions are also appreciated.
+
+📄 License
+This project is licensed under the MIT License.
