@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.baymax-fade-up {
+  transform: translateY(100px);
+  opacity: 0;
+  animation: fade-up 1s forwards ease-in-out;
+}
+
+.popup {
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color : #151414ee;
+  animation: fade-up 0.5s forwards ease-in-out;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgb(0 0 0 / 0.4);
+  max-width: 400px;
+  max-height: 500px;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+
+@keyframes fade-up {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.baymax-fade-down {
+  transform: translateY(-100px);
+  opacity: 0;
+  animation: fade-up 1s forwards ease-in-out;
+}
+
+@keyframes fade-down {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.baymax-fade {
+  opacity: 0;
+  animation: fade-up 1s forwards ease-in-out;
+}
+
+@keyframes fade {
+    from {
+   opacity: 0;
+  }
+  to {
+   opacity: 1;
+  }
+}

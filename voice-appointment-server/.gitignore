@@ -1,0 +1,13 @@
+# .gitignore (within server)
+
+# Node modules
+node_modules/
+
+# Environment files
+.env
+
+# Logs
+logs/
+*.log
+
+# Anything you want to ignore in this directory
