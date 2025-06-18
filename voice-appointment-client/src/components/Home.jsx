@@ -1,5 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import suvanImg from '../assets/team/Suvan.jpeg';
+import swapnilImg from '../assets/team/swapnil.jpeg';
+import prabhatImg from '../assets/team/prabhat.jpeg';
+import advaithImg from '../assets/team/advaith.jpeg';
+
 
 const FAQS = [
   {
@@ -24,25 +29,25 @@ const TEAM = [
   {
     name: "Suvan",
     role: "Developer",
-    img: "/src/assets/team/Suvan.jpeg",
+    img: suvanImg,
     linkedin: "https://www.linkedin.com/in/suvan-sethy-3b8720343/",
   },
   {
     name: "Swapnil",
     role: "Developer",
-    img: "/src/assets/team/swapnil.jpeg",
+    img: swapnilImg,
     linkedin: "https://www.linkedin.com/in/swapnil-verma-50b4ab209/",
   },
   {
     name: "Prabhat",
     role: "UI/UX Designer",
-    img: "/src/assets/team/prabhat.jpeg",
+    img: prabhatImg,
     linkedin: "https://www.linkedin.com/in/prabhat-solanki-439568348/",
   },
   {
     name: "Advaith",
     role: "Content Writer",
-    img: "/src/assets/team/advaith.jpeg",
+    img: advaithImg,
     linkedin: "https://www.linkedin.com/in/advaith-santosh-5031a2322/",
   },
 ];

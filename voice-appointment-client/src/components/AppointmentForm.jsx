@@ -2,32 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-const TEAM = [
-  {
-    name: "Suvan",
-    role: "Frontend Developer",
-    img: "https://randomuser.me/api/portraits/men/32.jpg",
-    linkedin: "https://www.linkedin.com/in/example1/",
-  },
-  {
-    name: "Amit",
-    role: "Backend Developer",
-    img: "https://randomuser.me/api/portraits/men/45.jpg",
-    linkedin: "https://www.linkedin.com/in/example2/",
-  },
-  {
-    name: "Priya",
-    role: "UI/UX Designer",
-    img: "https://randomuser.me/api/portraits/women/65.jpg",
-    linkedin: "https://www.linkedin.com/in/example3/",
-  },
-  {
-    name: "Rahul",
-    role: "Full Stack Developer",
-    img: "https://randomuser.me/api/portraits/men/77.jpg",
-    linkedin: "https://www.linkedin.com/in/example4/",
-  },
-];
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
 
 function AppointmentForm({ token }) {
   const [patientName, setPatientName] = useState('');
@@ -39,7 +15,7 @@ function AppointmentForm({ token }) {
   const submit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('/api/appointment/create',
+      const res = await axios.post(`${BASE_URL}/api/appointment/create`,
         {
           patientName,
           symptoms,

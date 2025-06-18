@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
 function Login({ onLogin }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -15,7 +17,7 @@ function Login({ onLogin }) {
     setLoading(true);
     setError(null);
     try {
-      const res = await axios.post('/api/auth/login', { email, password });
+      const res = await axios.post(`${BASE_URL}/api/auth/login`, { email, password });
       onLogin(res.data.token);
     } catch (err) {
       setError(err.response?.data?.error || "Login failed. Please check your credentials.");
