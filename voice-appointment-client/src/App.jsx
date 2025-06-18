@@ -1,20 +1,34 @@
 // src/App.jsx
 import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route, useNavigate, Navigate } from "react-router-dom";
 import AppointmentForm from "./components/AppointmentForm";
 import Login from "./components/Login";
+import Home from "./components/Home";
 
-function App() {
+function AppRoutes() {
   const [token, setToken] = useState(null);
+  const navigate = useNavigate();
+
+  const handleLogin = (newToken) => {
+    setToken(newToken);
+    navigate("/app");
+  };
 
   return (
-    <div className="min-h-screen">
-      {!token ? (
-        <Login onLogin={(newToken) => setToken(newToken)} />
-      ) : (
-        <AppointmentForm token={token} />
-      )}
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/login" element={<Login onLogin={handleLogin} />} />
+      <Route path="/app" element={token ? <AppointmentForm token={token} /> : <Navigate to="/login" />} />
+      <Route path="*" element={<Navigate to="/" />} />
+    </Routes>
+  );
+}
 
-    </div>
+function App() {
+  return (
+    <Router>
+      <AppRoutes />
+    </Router>
   );
 }
 
