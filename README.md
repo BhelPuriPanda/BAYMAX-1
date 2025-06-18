@@ -53,15 +53,7 @@ cd baymax
 🔧 Environment Variables
 Create a .env file in the server/ directory with the following keys:
 
-env
-Copy
-Edit
-PORT=5000
-MONGODB_URI=your_mongodb_atlas_connection_string
-JWT_SECRET=your_jwt_secret
-GOOGLE_CLIENT_ID=your_google_client_id
-GOOGLE_CLIENT_SECRET=your_google_client_secret
-GOOGLE_REFRESH_TOKEN=your_refresh_token
+
 ▶️ Running the Application
 Start the backend server:
 
