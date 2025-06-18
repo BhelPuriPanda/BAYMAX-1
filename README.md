@@ -1,6 +1,31 @@
 🏥 Baymax – Smart Appointment Booking System
 Baymax is an intelligent, full-stack clinic management web application that simplifies appointment booking using AI, voice commands, and Google integrations. Designed for front desk use, it ensures a seamless experience for booking and managing patient appointments.
 
+## login demo credentials
+username: aaa@aaa.com
+password: 1234567
+
+## 🚀 Quick Start
+
+1. Clone the repository:
+```bash
+git clone https://github.com/your-username/baymax.git
+```
+
+2. Install dependencies:
+```bash
+cd baymax
+npm install
+```
+
+3. Start the development server:
+```bash
+npm start
+```
+
+4. Open your browser and visit `http://localhost:3000` to access the application.
+
+
 📌 Key Features
 🎙️ AI-Powered Voice Appointment Booking
 Book appointments using speech with automatic transcription and intelligent slot mapping.

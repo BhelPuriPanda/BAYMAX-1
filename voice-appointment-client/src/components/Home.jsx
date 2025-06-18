@@ -28,13 +28,13 @@ const FAQS = [
 const TEAM = [
   {
     name: "Suvan",
-    role: "Developer",
+    role: "Frontend Developer & AI Integrator",
     img: suvanImg,
     linkedin: "https://www.linkedin.com/in/suvan-sethy-3b8720343/",
   },
   {
     name: "Swapnil",
-    role: "Developer",
+    role: "Backend Developer",
     img: swapnilImg,
     linkedin: "https://www.linkedin.com/in/swapnil-verma-50b4ab209/",
   },
@@ -46,7 +46,7 @@ const TEAM = [
   },
   {
     name: "Advaith",
-    role: "Content Writer",
+    role: "Content Writer & Pitcher",
     img: advaithImg,
     linkedin: "https://www.linkedin.com/in/advaith-santosh-5031a2322/",
   },
