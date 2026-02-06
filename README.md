@@ -1,136 +1,106 @@
-🏥 Baymax — Smart AI Appointment Booking System
+# Baymax — Smart AI Appointment Booking System
 
 Baymax is an intelligent clinic management web application that automates front-desk appointment booking using voice commands, AI parsing, and Google integrations.
 
-It acts like a virtual receptionist — staff can simply speak the request and Baymax schedules the appointment, updates the doctor’s calendar, and sends confirmation emails automatically.
+It works like a virtual receptionist — staff can speak the request and Baymax schedules the appointment, updates the doctor's calendar, and sends confirmation emails automatically.
 
-Built as a full-stack system focusing on real-world usability, automation, and accessibility.
+---
 
-✨ Demo Login
+## Demo Login
+```
 Email: aaa@aaa.com
 Password: 1234567
+```
 
-🧠 What Makes Baymax Different?
+---
 
-Traditional systems → manual typing → slow
-Baymax → speak → understand → schedule → notify
+## Features
 
-The system converts natural speech like:
+### AI Voice Booking
+- Speech to text using Web Speech API
+- Natural language understanding
+- Automatic date and time detection
+- Slot validation before booking
 
-“Book an appointment for Rahul tomorrow at 3 PM with Dr. Sharma”
+### Google Calendar Integration
+- Automatically creates doctor events
+- Prevents overlapping appointments
 
-into a structured appointment using AI-based parsing and validation.
+### Email Notifications
+- Confirmation mail to patient
+- Reminder mail to doctor
+- Powered by Gmail API
 
-🚀 Features
-🎙️ AI Voice Booking
+### Secure Authentication
+- JWT based sessions
+- bcrypt password hashing
 
-Speech → text using Web Speech API
+### User Interface
+- Clean responsive UI
+- Designed for front desk operators
 
-Natural language parsing
+---
 
-Intelligent date & time detection
+## Tech Stack
 
-Slot validation before booking
+### Frontend
+- React
+- Tailwind CSS
+- Axios
+- Web Speech API
 
-📅 Google Calendar Sync
+### Backend
+- Node.js
+- Express.js
+- MongoDB (Mongoose)
+- JWT
+- bcrypt
 
-Automatically creates doctor events
+### Integrations
+- Google Calendar API
+- Gmail API
+- MongoDB Atlas
 
-Prevents overlapping appointments
+---
 
-Real-time schedule visibility
+## Architecture
+```
+Speech → Text → AI Parser → Backend Validation → Database → Calendar + Email
+```
 
-📧 Automatic Email Notifications
+---
 
-Confirmation mail to patient
+## Local Setup
 
-Reminder mail to doctor
-
-Powered by Gmail API
-
-🔐 Secure Authentication
-
-JWT-based login sessions
-
-bcrypt password hashing
-
-💻 Clean UI/UX
-
-Responsive interface
-
-Built for front-desk operators
-
-Minimal training required
-
-🛠️ Tech Stack
-Frontend
-
-React
-
-Tailwind CSS
-
-Axios
-
-Web Speech API
-
-Backend
-
-Node.js
-
-Express.js
-
-MongoDB (Mongoose)
-
-JWT Authentication
-
-bcrypt
-
-Cloud & Integrations
-
-Google Calendar API
-
-Gmail API
-
-MongoDB Atlas
-
-🏗️ System Architecture
-User Speech
-     ↓
-Speech Recognition
-     ↓
-AI Parser
-     ↓
-Backend Validation
-     ↓
-Database Storage
-     ↓
-Google Calendar + Gmail Notification
-
-⚙️ Local Setup
-1️⃣ Clone the repository
+### 1. Clone Repository
+```bash
 git clone https://github.com/suvxn/baymax.git
 cd baymax
+```
 
-2️⃣ Setup Backend
+### 2. Backend Setup
+```bash
 cd server
 npm install
 npm start
+```
+Runs on: http://localhost:5000
 
-
-Backend runs on: http://localhost:5000
-
-3️⃣ Setup Frontend
+### 3. Frontend Setup
+```bash
 cd ../frontend
 npm install
 npm run dev
+```
+Runs on: http://localhost:5173
 
+---
 
-Frontend runs on: http://localhost:5173
+## Environment Variables
 
-🔑 Environment Variables
+Create `.env` inside `server/`
 
-Create a .env file inside server/
-
+```
 PORT=5000
 MONGO_URI=your_mongodb_connection
 JWT_SECRET=your_secret
@@ -139,54 +109,51 @@ GOOGLE_CLIENT_ID=your_client_id
 GOOGLE_CLIENT_SECRET=your_secret
 GOOGLE_REDIRECT_URI=your_redirect
 GOOGLE_REFRESH_TOKEN=your_refresh_token
+```
 
-📡 API Endpoints
-Method	Endpoint	Description
-POST	/api/auth/login	Login & get token
-POST	/api/appointment/create	Create appointment
-GET	/api/appointment/list	Fetch appointments
-🤖 Voice Command Examples
+---
 
-Try saying:
+## API Endpoints
 
-“Book appointment for Aman tomorrow at 5 PM”
+| Method | Endpoint | Description |
+|------|------|------|
+| POST | /api/auth/login | Login and get token |
+| POST | /api/appointment/create | Create appointment |
+| GET | /api/appointment/list | Fetch appointments |
 
-“Schedule patient Ravi on Monday morning”
+---
 
-“Appointment for Neha at 2:30 PM with Dr. Mehta”
+## Example Voice Commands
+- Book appointment for Rahul tomorrow at 3 PM
+- Schedule patient Aman on Monday morning
+- Appointment for Neha at 2:30 PM with Dr. Mehta
 
-📬 Google Integrations
+---
 
+## Google Integration
 Baymax connects with:
+- Google Calendar → adds appointment events
+- Gmail API → sends confirmation emails
 
-Google Calendar → Adds appointment events
+Requires Google OAuth credentials.
 
-Gmail API → Sends confirmation emails
+---
 
-Requires Google OAuth credentials setup
+## Contributing
+1. Fork the repository
+2. Create a feature branch
+3. Open a pull request
 
-👨‍💻 Contributing
+---
 
-Contributions are welcome!
-
-Fork the repo
-
-Create a feature branch
-
-Open a Pull Request
-
-📄 License
-
+## License
 MIT License
 
-🌟 Future Improvements
+---
 
-WhatsApp reminders
-
-Doctor dashboard analytics
-
-Multi-clinic support
-
-AI no-show prediction
-
-Voice support in regional languages
+## Future Improvements
+- WhatsApp reminders
+- Doctor analytics dashboard
+- Multi clinic support
+- AI no-show prediction
+- Regional language voice support
